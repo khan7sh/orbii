@@ -340,7 +340,7 @@ export default function Component() {
             <a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
               LinkedIn
             </a>
-            <a href="https://instagram.com/yourinstagramhandle" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
+            <a href="https://www.instagram.com/orbifusion/" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
               Instagram
             </a>
           </nav>

@@ -1,10 +1,11 @@
 import { Button } from "../components/ui/button"
-import { Brain, Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot } from "lucide-react"
+import { Brain, Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot, X } from "lucide-react"
 import Link from "next/link"
 import React, { useState, useEffect } from 'react'
 
 export default function Component() {
   const [showAirtable, setShowAirtable] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleSmoothScroll = (e: Event) => {
@@ -32,6 +33,46 @@ export default function Component() {
     };
   }, []);
 
+  const menuItems = ["Services", "Features", "Process", "Contact"]
+
+  const MobileMenu = () => (
+    <div className="fixed inset-0 z-50 bg-background">
+      <div className="flex flex-col h-full">
+        <div className="flex justify-between items-center p-4 border-b border-gray-200">
+          <Link className="flex items-center justify-center" href="#" onClick={() => setMobileMenuOpen(false)}>
+            <Brain className="h-6 w-6 text-primary" />
+            <span className="ml-2 text-lg font-bold text-secondary">OrbiFusion</span>
+          </Link>
+          <button onClick={() => setMobileMenuOpen(false)}>
+            <X className="h-6 w-6 text-primary" />
+          </button>
+        </div>
+        <nav className="flex flex-col flex-grow justify-center items-center space-y-8">
+          {menuItems.map((item) => (
+            <a
+              key={item}
+              className="text-lg font-medium hover:text-primary transition-colors"
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {item}
+            </a>
+          ))}
+          <Button 
+            variant="outline" 
+            className="border-primary text-primary hover:bg-primary/10 text-lg py-2 px-4"
+            onClick={() => {
+              setShowAirtable(true)
+              setMobileMenuOpen(false)
+            }}
+          >
+            Let's Talk
+          </Button>
+        </nav>
+      </div>
+    </div>
+  )
+
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-text">
       <header className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between border-b border-gray-200">
@@ -39,32 +80,45 @@ export default function Component() {
           <Brain className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
           <span className="ml-2 text-lg sm:text-xl font-bold text-secondary">OrbiFusion</span>
         </Link>
-        <nav className="hidden sm:flex gap-6 sm:gap-8">
-          {["Services", "Features", "Process", "Contact"].map((item) => (
+        <nav className="hidden sm:flex items-center gap-6 sm:gap-8">
+          {menuItems.map((item) => (
             <a key={item} className="text-sm font-medium hover:text-primary transition-colors" href={`#${item.toLowerCase()}`}>
               {item}
             </a>
           ))}
+          <Button 
+            variant="outline" 
+            className="border-primary text-primary hover:bg-primary/10 text-sm py-2 px-4"
+            onClick={() => setShowAirtable(true)}
+          >
+            Let's Talk
+          </Button>
         </nav>
-        <button className="sm:hidden text-primary" onClick={() => {/* Add mobile menu toggle logic here */}}>
+        <button className="sm:hidden text-primary" onClick={() => setMobileMenuOpen(true)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </header>
+      {mobileMenuOpen && <MobileMenu />}
       <main className="flex-1">
-        <section className="w-full py-12 sm:py-20 md:py-32 lg:py-44">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-6 sm:space-y-8 text-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter max-w-3xl mx-auto text-secondary">
-                Welcome to <span className="text-primary">OrbiFusion</span>
+        <section className="w-full h-[calc(100vh-5rem)] flex items-center py-12 sm:py-20 md:py-32 lg:py-0 bg-gradient-to-br from-purple-100 via-white to-purple-100 relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-radial from-purple-300/40 to-transparent animate-pulse"></div>
+          <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="flex flex-col items-center space-y-8 sm:space-y-10 text-center">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter max-w-3xl mx-auto text-secondary drop-shadow-lg">
+                Welcome to <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-600">OrbiFusion</span>
               </h1>
-              <p className="mx-auto max-w-[700px] text-text-muted text-base sm:text-lg md:text-xl">
+              <p className="mx-auto max-w-[700px] text-text-muted text-lg sm:text-xl md:text-2xl font-medium">
                 Revolutionizing businesses with cutting-edge AI solutions. Unlock the power of artificial intelligence
                 with OrbiFusion.
               </p>
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
                 <Button
                   asChild
-                  className="bg-primary text-white hover:bg-primary/90 text-base sm:text-lg py-2 sm:py-3 px-4 sm:px-6"
+                  className="bg-primary text-white hover:bg-primary/90 text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <a
                     href="https://calendly.com/azam-orbifusion/ai-consultation"
@@ -76,7 +130,7 @@ export default function Component() {
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="border-primary text-primary hover:bg-primary/10 text-base sm:text-lg py-2 sm:py-3 px-4 sm:px-6"
+                  className="border-primary text-primary hover:bg-primary/10 text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                   onClick={() => setShowAirtable(true)}
                 >
                   Let's Talk
@@ -161,7 +215,7 @@ export default function Component() {
             </div>
           </div>
         </section>
-        <section id="features" className="w-full py-20 md:py-32 bg-gray-50">
+        <section id="features" className="w-full py-20 md:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
               Our Features
@@ -181,26 +235,48 @@ export default function Component() {
             </div>
           </div>
         </section>
-        <section id="process" className="w-full py-20 md:py-32">
+        <section id="process" className="w-full py-20 md:py-32 bg-gradient-to-b from-white to-purple-50">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
               Our Process
             </h2>
-            <div className="max-w-3xl mx-auto">
-              <div className="space-y-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-12">
                 {[
-                  { icon: Search, title: "Discovery", description: "We analyze your business needs and objectives." },
-                  { icon: Code, title: "Development", description: "Our experts design and develop tailored AI solutions." },
-                  { icon: BarChart, title: "Implementation", description: "We integrate the AI solution into your existing systems." },
-                  { icon: Users, title: "Training", description: "We provide comprehensive training for your team." },
-                  { icon: CheckCircle, title: "Optimization", description: "Continuous improvement and support for optimal performance." },
+                  { 
+                    icon: Search, 
+                    title: "AI Readiness Consultation", 
+                    description: "We start by understanding your vision. Our initial consultation aligns our AI solutions with your business goals.",
+                    step: "STEP 1"
+                  },
+                  { 
+                    icon: BarChart, 
+                    title: "Transparent Progress Tracking", 
+                    description: "Your dedicated customer portal allows for real-time progress tracking and feedback, ensuring our solutions evolve with your needs.",
+                    step: "STEP 2"
+                  },
+                  { 
+                    icon: Code, 
+                    title: "Seamless Integration", 
+                    description: "We'll embed your new AI agents into your business, ensuring they deliver real value from day one.",
+                    step: "STEP 3"
+                  },
+                  { 
+                    icon: Cog, 
+                    title: "Ongoing Support", 
+                    description: "We'll keep adding more agents, refining and expanding their capabilities to keep your company ahead of the game.",
+                    step: "STEP 4"
+                  },
                 ].map((step, index) => (
-                  <div key={index} className="flex items-center space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                      {<step.icon className="w-6 h-6 text-white" />}
+                  <div key={index} className="flex items-start space-x-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                        {React.createElement(step.icon, { className: "w-8 h-8 text-white" })}
+                      </div>
                     </div>
                     <div className="flex-grow">
-                      <h3 className="text-lg font-bold text-secondary">{step.title}</h3>
+                      <div className="text-sm font-semibold text-primary mb-1">{step.step}</div>
+                      <h3 className="text-xl font-bold text-secondary mb-2">{step.title}</h3>
                       <p className="text-text-muted">{step.description}</p>
                     </div>
                   </div>
@@ -209,7 +285,7 @@ export default function Component() {
             </div>
           </div>
         </section>
-        <section id="contact" className="w-full py-20 md:py-32 bg-gray-50">
+        <section id="contact" className="w-full py-20 md:py-32 bg-gradient-to-b from-gray-50 to-purple-100">
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-6 text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-secondary">Get in Touch</h2>
@@ -234,16 +310,27 @@ export default function Component() {
           </div>
         </section>
       </main>
-      <footer className="container mx-auto flex flex-col sm:flex-row gap-4 py-8 w-full shrink-0 items-center justify-between px-4 md:px-6 border-t border-gray-200">
-        <p className="text-sm text-text-muted text-center sm:text-left">© 2023 OrbiFusion AI. All rights reserved.</p>
-        <nav className="flex gap-4 sm:gap-6">
-          <Link className="text-sm text-text-muted hover:text-primary transition-colors" href="#">
-            Terms of Service
-          </Link>
-          <Link className="text-sm text-text-muted hover:text-primary transition-colors" href="#">
-            Privacy
-          </Link>
-        </nav>
+      <footer className="bg-purple-100 border-t border-purple-200">
+        <div className="container mx-auto flex flex-col sm:flex-row gap-4 py-8 w-full shrink-0 items-center justify-between px-4 md:px-6">
+          <p className="text-sm text-text-muted text-center sm:text-left">© 2023 OrbiFusion AI. All rights reserved.</p>
+          <nav className="flex gap-4 sm:gap-6">
+            <Link className="text-sm text-text-muted hover:text-primary transition-colors" href="/terms">
+              Terms of Service
+            </Link>
+            <Link className="text-sm text-text-muted hover:text-primary transition-colors" href="/privacy">
+              Privacy
+            </Link>
+            <a href="https://twitter.com/yourtwitterhandle" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
+              Twitter
+            </a>
+            <a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
+              LinkedIn
+            </a>
+            <a href="https://instagram.com/yourinstagramhandle" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
+              Instagram
+            </a>
+          </nav>
+        </div>
       </footer>
     </div>
   )

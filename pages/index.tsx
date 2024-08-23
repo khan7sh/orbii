@@ -1,5 +1,5 @@
 import { Button } from "../components/ui/button"
-import { Brain, Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot, X } from "lucide-react"
+import { Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot, X, Atom } from "lucide-react"
 import Link from "next/link"
 import React, { useState, useEffect } from 'react'
 
@@ -40,7 +40,10 @@ export default function Component() {
       <div className="flex flex-col h-full">
         <div className="flex justify-between items-center p-4 border-b border-gray-200">
           <Link className="flex items-center justify-center" href="#" onClick={() => setMobileMenuOpen(false)}>
-            <Brain className="h-6 w-6 text-primary" />
+            <div className="relative">
+              <Atom className="h-6 w-6 text-primary" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-indigo-600 rounded-full opacity-30 animate-pulse"></div>
+            </div>
             <span className="ml-2 text-lg font-bold text-secondary">OrbiFusion</span>
           </Link>
           <button onClick={() => setMobileMenuOpen(false)}>
@@ -77,7 +80,10 @@ export default function Component() {
     <div className="flex flex-col min-h-[100dvh] bg-background text-text">
       <header className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between border-b border-gray-200">
         <Link className="flex items-center justify-center" href="#">
-          <Brain className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+          <div className="relative">
+            <Atom className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-indigo-600 rounded-full opacity-30 animate-pulse"></div>
+          </div>
           <span className="ml-2 text-lg sm:text-xl font-bold text-secondary">OrbiFusion</span>
         </Link>
         <nav className="hidden sm:flex items-center gap-6 sm:gap-8">
@@ -203,11 +209,13 @@ export default function Component() {
                   </div>
                   <div className="px-6 pb-6">
                     <Button
+                      asChild
                       variant="outline"
                       className="w-full border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300"
-                      href="https://calendly.com/azam-orbifusion/ai-consultation"
                     >
-                      Learn More
+                      <a href="https://calendly.com/azam-orbifusion/ai-consultation">
+                        Learn More
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -222,7 +230,7 @@ export default function Component() {
             </h2>
             <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
               {[
-                { icon: Brain, title: "Advanced AI Algorithms", description: "Cutting-edge machine learning models for optimal performance." },
+                { icon: Atom, title: "Advanced AI Algorithms", description: "Cutting-edge machine learning models for optimal performance." },
                 { icon: Rocket, title: "Scalable Solutions", description: "Grow your AI capabilities alongside your business needs." },
                 { icon: Zap, title: "Real-time Insights", description: "Instant data analysis for quick and informed decision-making." },
               ].map((feature, index) => (
@@ -287,15 +295,15 @@ export default function Component() {
         </section>
         <section id="contact" className="w-full py-20 md:py-32 bg-gradient-to-b from-gray-50 to-purple-100">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-6 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-secondary">Get in Touch</h2>
-              <p className="mx-auto max-w-[600px] text-text-muted text-lg md:text-xl">
-                Ready to transform your business with AI? Book a call with us today.
+            <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-secondary mb-6 text-center">Get in Touch</h2>
+              <p className="text-text-muted text-lg md:text-xl mb-8 text-center">
+                Ready to transform your business with AI? Let's start a conversation.
               </p>
-              <div className="w-full max-w-sm">
+              <div className="flex justify-center mb-8">
                 <Button
                   asChild
-                  className="w-full bg-primary text-white hover:bg-primary/90 text-lg py-3"
+                  className="w-full md:w-auto bg-primary text-white hover:bg-primary/90 text-lg py-3 px-6"
                 >
                   <a
                     href="https://calendly.com/azam-orbifusion/ai-consultation"
@@ -306,6 +314,12 @@ export default function Component() {
                   </a>
                 </Button>
               </div>
+              <div className="text-center">
+                <h3 className="text-xl font-semibold text-secondary mb-2">Contact Us</h3>
+                <p className="text-text-muted">
+                  Email: <a href="mailto:contact@orbifusion.com" className="text-primary hover:underline">contact@orbifusion.com</a>
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -313,7 +327,7 @@ export default function Component() {
       <footer className="bg-purple-100 border-t border-purple-200">
         <div className="container mx-auto flex flex-col sm:flex-row gap-4 py-8 w-full shrink-0 items-center justify-between px-4 md:px-6">
           <p className="text-sm text-text-muted text-center sm:text-left">© 2023 OrbiFusion AI. All rights reserved.</p>
-          <nav className="flex gap-4 sm:gap-6">
+          <nav className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6">
             <Link className="text-sm text-text-muted hover:text-primary transition-colors" href="/terms">
               Terms of Service
             </Link>

@@ -59,7 +59,7 @@ export default function Component() {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
           </button>
         </header>
-        {mobileMenuOpen && <MobileMenu />}
+        {mobileMenuOpen && <MobileMenu onClose={() => setMobileMenuOpen(false)} />}
         <main className="flex-1">
           <section className="w-full h-[calc(100vh-5rem)] flex items-center py-12 sm:py-20 md:py-32 lg:py-0 bg-gradient-to-br from-purple-100 via-white to-purple-100 relative overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>

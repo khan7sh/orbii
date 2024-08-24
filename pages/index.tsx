@@ -39,7 +39,7 @@ export default function Component() {
               <Atom className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
               <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-indigo-600 rounded-full opacity-30 animate-pulse"></div>
             </div>
-            <span className="ml-2 text-lg sm:text-xl font-bold text-secondary">OrbiFusion</span>
+            <span className="ml-2 text-lg sm:text-xl font-bold text-secondary pt-1">Optimize AI Agency</span>
           </Link>
           <nav className="hidden sm:flex items-center gap-6 sm:gap-8">
             {menuItems.map((item) => (
@@ -52,7 +52,7 @@ export default function Component() {
               className="border-primary text-primary hover:bg-primary/10 text-sm py-2 px-4"
               onClick={() => setShowAirtable(true)}
             >
-              Let's Talk
+              Get Started
             </Button>
           </nav>
           <button className="sm:hidden text-primary" onClick={() => setMobileMenuOpen(true)}>
@@ -69,12 +69,12 @@ export default function Component() {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <div className="flex flex-col items-center space-y-8 sm:space-y-10 text-center">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter max-w-3xl mx-auto text-secondary drop-shadow-lg">
-                  Welcome to <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-600">OrbiFusion</span>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter max-w-3xl mx-auto text-secondary drop-shadow-lg pb-2">
+                  Welcome to <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-600">Optimize AI Agency</span>
                 </h1>
                 <p className="mx-auto max-w-[700px] text-text-muted text-lg sm:text-xl md:text-2xl font-medium">
                   Revolutionizing businesses with cutting-edge AI solutions. Unlock the power of artificial intelligence
-                  with OrbiFusion.
+                  with Optimize AI Agency.
                 </p>
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
                   <Button
@@ -272,7 +272,7 @@ export default function Component() {
                 <div className="text-center">
                   <h3 className="text-xl font-semibold text-secondary mb-2">Contact Us</h3>
                   <p className="text-text-muted">
-                    Email: <a href="mailto:contact@orbifusion.com" className="text-primary hover:underline">contact@orbifusion.com</a>
+                    Email: <a href="mailto:contact@optimizeai.agency" className="text-primary hover:underline">contact@optimizeai.agency</a>
                   </p>
                 </div>
               </div>
@@ -281,7 +281,7 @@ export default function Component() {
         </main>
         <footer className="bg-purple-100 border-t border-purple-200">
           <div className="container mx-auto flex flex-col sm:flex-row gap-4 py-8 w-full shrink-0 items-center justify-between px-4 md:px-6">
-            <p className="text-sm text-text-muted text-center sm:text-left">© 2023 OrbiFusion AI. All rights reserved.</p>
+            <p className="text-sm text-text-muted text-center sm:text-left">© 2023 Optimize AI Agency. All rights reserved.</p>
             <nav className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6">
               <Link className="text-sm text-text-muted hover:text-primary transition-colors" href="/terms">
                 Terms of Service
@@ -295,7 +295,7 @@ export default function Component() {
               <a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
                 LinkedIn
               </a>
-              <a href="https://www.instagram.com/orbifusion/" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/optimizeaiagency/" target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:text-primary transition-colors">
                 Instagram
               </a>
             </nav>

@@ -33,7 +33,7 @@ export default function TermsOfService() {
         <p>
           If you have any questions about these Terms, please contact us at:
         </p>
-        <p>Email: contact@orbifusion.com</p>
+        <p>Email: contact@optimizeai.agency</p>
         <p>Address: United Kingdom CB1 1PT</p>
       </div>
       <Link href="/" className="text-primary hover:underline mt-8 inline-block">

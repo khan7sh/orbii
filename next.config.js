@@ -4,7 +4,7 @@ const nextConfig = {
   output: 'standalone',
   useFileSystemPublicRoutes: true,
   experimental: {
-    appDir: true,
+    // Remove any experimental.appDir configuration
   },
 }
 

@@ -55,10 +55,10 @@ export default function Home() {
               </a>
             ))}
             <Button
-              className="text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="text-sm font-medium py-2 px-4 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all duration-300"
               onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
             >
-              Book a Call
+              Get Started
             </Button>
           </nav>
           <button className="sm:hidden text-primary" onClick={() => setMobileMenuOpen(true)}>
@@ -112,14 +112,12 @@ export default function Home() {
           </section>
 
           <section className="relative py-16 text-center">
-            <ShimmerButton
-              shimmerColor="#ffffff"
-              background="linear-gradient(to right, #4F46E5, #7C3AED)"
-              className="text-lg font-semibold mx-auto px-8 py-3 text-white"
+            <Button
+              className="text-lg font-semibold mx-auto px-8 py-3 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
             >
               Book Discovery Call Now
-            </ShimmerButton>
+            </Button>
           </section>
 
           {showAirtable && (

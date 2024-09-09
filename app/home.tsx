@@ -1,5 +1,7 @@
 import HeroSection from '@/components/HeroSection';
 import HeroVideoDialog from '@/components/magicui/hero-video-dialog';
+import ShimmerButton from '@/components/magicui/shimmer-button';
+import ShineBorder from '@/components/magicui/shine-border';
 
 export default function Home() {
   return (

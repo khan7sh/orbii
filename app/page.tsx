@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
-import { DotPattern } from "./dot-pattern";
+import { DotPattern } from "@/components/magicui/dot-pattern";
 
 import { cn } from "@/lib/utils";
 

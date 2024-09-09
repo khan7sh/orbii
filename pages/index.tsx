@@ -6,6 +6,7 @@ import ErrorBoundary from '../components/ErrorBoundary'
 import MobileMenu from '../components/MobileMenu';
 import { DotPattern } from "@/components/magicui/dot-pattern";
 import HeroVideoDialog from '@/components/magicui/hero-video-dialog';
+import ShimmerButton from '@/components/magicui/shimmer-button';
 
 export default function Component() {
   const [showAirtable, setShowAirtable] = useState(false)
@@ -111,6 +112,20 @@ export default function Component() {
               thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
               className="max-w-4xl mx-auto"
             />
+          </section>
+
+          {/* New section for the ShimmerButton */}
+          <section className="relative py-16 text-center">
+            <h2 className="text-3xl font-bold mb-4 text-secondary">Ready to Transform Your Business?</h2>
+            <p className="text-lg mb-8 text-text-muted">Schedule a discovery call with our AI experts and unlock your company's potential.</p>
+            <ShimmerButton
+              shimmerColor="#ffffff"
+              background="transparent"
+              className="text-lg font-semibold"
+              onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
+            >
+              Book Discovery Call Now
+            </ShimmerButton>
           </section>
 
           {showAirtable && (

@@ -3,9 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'standalone',
   useFileSystemPublicRoutes: true,
-  experimental: {
-    // Remove any experimental.appDir configuration
-  },
+  experimental: {},
 }
 
 module.exports = nextConfig

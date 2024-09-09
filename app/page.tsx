@@ -102,7 +102,7 @@ export default function Home() {
             </div>
           </section>
           
-          <section className="relative py-16">
+          <section className="relative py-16 mb-16">
             <h2 className="text-3xl font-bold mb-4 text-secondary text-center">Ready to Transform Your Business?</h2>
             <p className="text-lg mb-8 text-text-muted text-center">Schedule a discovery call with our AI experts and unlock your company's potential.</p>
             <div className="max-w-[853px] mx-auto">
@@ -110,7 +110,7 @@ export default function Home() {
                 <HeroVideoDialog
                   videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c"
                   thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
-                  className="absolute inset-0 w-full h-full"
+                  className="w-full h-full"
                 />
               </div>
             </div>

@@ -79,7 +79,7 @@ export default function HeroVideoDialog({
   const selectedAnimation = animationVariants[animationStyle];
 
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("w-full h-full", className)}>
       <DotPattern className="absolute inset-0 opacity-50" />
       <div
         className="relative cursor-pointer group"

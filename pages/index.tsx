@@ -52,13 +52,14 @@ export default function Component() {
                 {item}
               </a>
             ))}
-            <Button 
-              variant="outline" 
-              className="border-primary text-primary hover:bg-primary/10 text-sm py-2 px-4"
-              onClick={() => setShowAirtable(true)}
+            <ShimmerButton
+              shimmerColor="#ffffff"
+              background="linear-gradient(to right, #4F46E5, #7C3AED)"
+              className="text-sm py-2 px-4 text-white"
+              onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
             >
               Get Started
-            </Button>
+            </ShimmerButton>
           </nav>
           <button className="sm:hidden text-primary" onClick={() => setMobileMenuOpen(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -82,18 +83,14 @@ export default function Component() {
                   with Optimize AI Agency.
                 </p>
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                  <Button
-                    asChild
-                    className="bg-primary text-white hover:bg-primary/90 text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  <ShimmerButton
+                    shimmerColor="#ffffff"
+                    background="linear-gradient(to right, #4F46E5, #7C3AED)"
+                    className="text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
                   >
-                    <a
-                      href="https://calendly.com/contact-optimizeai/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Book a Call
-                    </a>
-                  </Button>
+                    Book a Call
+                  </ShimmerButton>
                   <Button 
                     variant="outline" 
                     className="border-primary text-primary hover:bg-primary/10 text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
@@ -227,52 +224,54 @@ export default function Component() {
               </div>
             </div>
           </section>
-          <section id="process" className="w-full py-20 md:py-32 bg-gradient-to-b from-white to-purple-50">
+          <section id="process" className="w-full py-20 md:py-32">
             <div className="container mx-auto px-4 md:px-6">
-              <ShineBorder className="p-8 rounded-xl bg-white max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center text-secondary mb-12">
-                  Our Process
-                </h2>
-                <div className="space-y-12">
-                  {[
-                    { 
-                      icon: Search, 
-                      title: "AI Readiness Consultation", 
-                      description: "We start by understanding your vision. Our initial consultation aligns our AI solutions with your business goals.",
-                      step: "STEP 1"
-                    },
-                    { 
-                      icon: BarChart, 
-                      title: "Transparent Progress Tracking", 
-                      description: "Your dedicated customer portal allows for real-time progress tracking and feedback, ensuring our solutions evolve with your needs.",
-                      step: "STEP 2"
-                    },
-                    { 
-                      icon: Code, 
-                      title: "Seamless Integration", 
-                      description: "We'll embed your new AI agents into your business, ensuring they deliver real value from day one.",
-                      step: "STEP 3"
-                    },
-                    { 
-                      icon: Cog, 
-                      title: "Ongoing Support", 
-                      description: "We'll keep adding more agents, refining and expanding their capabilities to keep your company ahead of the game.",
-                      step: "STEP 4"
-                    },
-                  ].map((step, index) => (
-                    <div key={index} className="flex items-start space-x-6">
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                          {React.createElement(step.icon, { className: "w-8 h-8 text-white" })}
+              <ShineBorder className="p-8 rounded-xl max-w-4xl mx-auto" borderRadius={16} borderWidth={2} color="#4F46E5">
+                <div className="bg-white">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center text-secondary mb-12">
+                    Our Process
+                  </h2>
+                  <div className="space-y-12">
+                    {[
+                      { 
+                        icon: Search, 
+                        title: "AI Readiness Consultation", 
+                        description: "We start by understanding your vision. Our initial consultation aligns our AI solutions with your business goals.",
+                        step: "STEP 1"
+                      },
+                      { 
+                        icon: BarChart, 
+                        title: "Transparent Progress Tracking", 
+                        description: "Your dedicated customer portal allows for real-time progress tracking and feedback, ensuring our solutions evolve with your needs.",
+                        step: "STEP 2"
+                      },
+                      { 
+                        icon: Code, 
+                        title: "Seamless Integration", 
+                        description: "We'll embed your new AI agents into your business, ensuring they deliver real value from day one.",
+                        step: "STEP 3"
+                      },
+                      { 
+                        icon: Cog, 
+                        title: "Ongoing Support", 
+                        description: "We'll keep adding more agents, refining and expanding their capabilities to keep your company ahead of the game.",
+                        step: "STEP 4"
+                      },
+                    ].map((step, index) => (
+                      <div key={index} className="flex items-start space-x-6">
+                        <div className="flex-shrink-0">
+                          <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                            {React.createElement(step.icon, { className: "w-8 h-8 text-white" })}
+                          </div>
+                        </div>
+                        <div className="flex-grow">
+                          <div className="text-sm font-semibold text-primary mb-1">{step.step}</div>
+                          <h3 className="text-xl font-bold text-secondary mb-2">{step.title}</h3>
+                          <p className="text-text-muted">{step.description}</p>
                         </div>
                       </div>
-                      <div className="flex-grow">
-                        <div className="text-sm font-semibold text-primary mb-1">{step.step}</div>
-                        <h3 className="text-xl font-bold text-secondary mb-2">{step.title}</h3>
-                        <p className="text-text-muted">{step.description}</p>
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </ShineBorder>
             </div>
@@ -285,18 +284,14 @@ export default function Component() {
                   Ready to transform your business with AI? Let's start a conversation.
                 </p>
                 <div className="flex justify-center mb-8">
-                  <Button
-                    asChild
-                    className="w-full md:w-auto bg-primary text-white hover:bg-primary/90 text-lg py-3 px-6"
+                  <ShimmerButton
+                    shimmerColor="#ffffff"
+                    background="linear-gradient(to right, #4F46E5, #7C3AED)"
+                    className="w-full md:w-auto text-lg py-3 px-6 text-white"
+                    onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
                   >
-                    <a
-                      href="https://calendly.com/contact-optimizeai/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Book a Call
-                    </a>
-                  </Button>
+                    Book a Call
+                  </ShimmerButton>
                 </div>
                 <div className="text-center">
                   <h3 className="text-xl font-semibold text-secondary mb-2">Contact Us</h3>

@@ -173,15 +173,11 @@ export default function Home() {
                     features: ["Self-adaptive systems", "Real-time processing", "Predictive analytics"]
                   },
                 ].map((service, index) => (
-                  <ShineBorder
+                  <div
                     key={index}
-                    borderRadius={16}
-                    borderWidth={2}
-                    duration={10}
-                    color={["#4F46E5", "#7C3AED"]}
-                    className="bg-white transition-all duration-300 hover:shadow-2xl group overflow-hidden"
+                    className="bg-white transition-all duration-300 hover:shadow-2xl group overflow-hidden rounded-2xl"
                   >
-                    <div className="bg-white p-6">
+                    <div className="p-6">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                         {React.createElement(service.icon, { className: "h-6 w-6 text-primary" })}
                       </div>
@@ -196,7 +192,7 @@ export default function Home() {
                         ))}
                       </ul>
                     </div>
-                    <div className="bg-white px-6 pb-6">
+                    <div className="px-6 pb-6">
                       <Button
                         asChild
                         variant="outline"
@@ -207,7 +203,7 @@ export default function Home() {
                         </a>
                       </Button>
                     </div>
-                  </ShineBorder>
+                  </div>
                 ))}
               </div>
             </div>

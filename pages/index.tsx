@@ -4,6 +4,7 @@ import Link from "next/link"
 import React, { useState, useEffect } from 'react'
 import ErrorBoundary from '../components/ErrorBoundary'
 import MobileMenu from '../components/MobileMenu';
+import { DotPattern } from "@/components/magicui/dot-pattern";
 
 export default function Component() {
   const [showAirtable, setShowAirtable] = useState(false)
@@ -33,6 +34,7 @@ export default function Component() {
   return (
     <ErrorBoundary>
       <div className="flex flex-col min-h-[100dvh] bg-background text-text">
+        <DotPattern className="opacity-50" />
         <header className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between border-b border-gray-200">
           <Link className="flex items-center justify-center" href="#">
             <div className="relative">

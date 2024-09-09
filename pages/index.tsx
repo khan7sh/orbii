@@ -82,7 +82,7 @@ export default function Component() {
                     className="bg-primary text-white hover:bg-primary/90 text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <a
-                      href="https://calendly.com/azam-orbifusion/ai-consultation"
+                      href="https://calendly.com/contact-optimizeai/30min"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -168,7 +168,7 @@ export default function Component() {
                         variant="outline"
                         className="w-full border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300"
                       >
-                        <a href="https://calendly.com/azam-orbifusion/ai-consultation">
+                        <a href="https://calendly.com/contact-optimizeai/30min">
                           Learn More
                         </a>
                       </Button>
@@ -261,7 +261,7 @@ export default function Component() {
                     className="w-full md:w-auto bg-primary text-white hover:bg-primary/90 text-lg py-3 px-6"
                   >
                     <a
-                      href="https://calendly.com/azam-orbifusion/ai-consultation"
+                      href="https://calendly.com/contact-optimizeai/30min"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

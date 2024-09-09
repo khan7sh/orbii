@@ -229,8 +229,14 @@ export default function Home() {
 
           <section id="process" className="w-full py-20 md:py-32">
             <div className="container mx-auto px-4 md:px-6">
-              <ShineBorder borderRadius={16} borderWidth={2} color="#4F46E5" duration={10}>
-                <div className="bg-white p-8 rounded-xl max-w-4xl mx-auto">
+              <ShineBorder 
+                borderRadius={16} 
+                borderWidth={2} 
+                color={["#4F46E5", "#7C3AED"]} 
+                duration={10}
+                className="max-w-4xl mx-auto"
+              >
+                <div className="bg-white p-8 rounded-xl">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center text-secondary mb-12">
                     Our Process
                   </h2>

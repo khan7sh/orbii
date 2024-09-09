@@ -34,7 +34,7 @@ export default function Component() {
   return (
     <ErrorBoundary>
       <div className="flex flex-col min-h-[100dvh] bg-background text-text">
-        <DotPattern className="opacity-50" />
+        <DotPattern className="opacity-30" />
         <header className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between border-b border-gray-200">
           <Link className="flex items-center justify-center" href="#">
             <div className="relative">
@@ -63,12 +63,12 @@ export default function Component() {
         </header>
         {mobileMenuOpen && <MobileMenu onClose={() => setMobileMenuOpen(false)} />}
         <main className="flex-1">
-          <section className="w-full h-[calc(100vh-5rem)] flex items-center py-12 sm:py-20 md:py-32 lg:py-0 bg-gradient-to-br from-purple-100 via-white to-purple-100 relative overflow-hidden">
-            <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
-            <div className="absolute inset-0 bg-gradient-radial from-purple-300/40 to-transparent animate-pulse"></div>
-            <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
+          <section className="w-full h-[calc(100vh-5rem)] flex items-center py-12 sm:py-20 md:py-32 lg:py-0 bg-gradient-to-br from-purple-100/70 via-white/70 to-purple-100/70 relative overflow-hidden">
+            <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+            <div className="absolute inset-0 bg-gradient-radial from-purple-300/20 to-transparent animate-pulse"></div>
+            <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob"></div>
+            <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50/70 to-transparent"></div>
             <div className="container mx-auto px-4 md:px-6 relative z-10">
               <div className="flex flex-col items-center space-y-8 sm:space-y-10 text-center">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter max-w-3xl mx-auto text-secondary drop-shadow-lg pb-2">

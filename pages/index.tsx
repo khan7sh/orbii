@@ -103,6 +103,16 @@ export default function Component() {
               </div>
             </div>
           </section>
+          
+          {/* Add HeroVideoDialog right after the hero section */}
+          <section className="relative py-16">
+            <HeroVideoDialog
+              videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c"
+              thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
+              className="max-w-4xl mx-auto"
+            />
+          </section>
+
           {showAirtable && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
               <div className="bg-white p-4 rounded-lg w-full max-w-3xl">
@@ -280,13 +290,6 @@ export default function Component() {
                 </div>
               </div>
             </div>
-          </section>
-          <section className="relative py-16">
-            <HeroVideoDialog
-              videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c"
-              thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
-              className="max-w-4xl mx-auto"
-            />
           </section>
         </main>
         <footer className="bg-purple-100 border-t border-purple-200">

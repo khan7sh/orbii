@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import ErrorBoundary from '../components/ErrorBoundary'
 import MobileMenu from '../components/MobileMenu';
 import { DotPattern } from "@/components/magicui/dot-pattern";
+import HeroVideoDialog from '@/components/magicui/hero-video-dialog';
 
 export default function Component() {
   const [showAirtable, setShowAirtable] = useState(false)
@@ -279,6 +280,13 @@ export default function Component() {
                 </div>
               </div>
             </div>
+          </section>
+          <section className="relative py-16">
+            <HeroVideoDialog
+              videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c"
+              thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
+              className="max-w-4xl mx-auto"
+            />
           </section>
         </main>
         <footer className="bg-purple-100 border-t border-purple-200">

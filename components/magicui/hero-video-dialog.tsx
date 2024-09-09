@@ -70,8 +70,8 @@ const animationVariants = {
 
 export default function HeroVideoDialog({
   animationStyle = "from-center",
-  videoSrc,
-  thumbnailSrc,
+  videoSrc = "https://youtu.be/GTIFPFqbB8c?si=59yzWG_xzcVbenEQ",
+  thumbnailSrc = "https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg",
   thumbnailAlt = "Video thumbnail",
   className,
 }: HeroVideoProps) {
@@ -140,3 +140,4 @@ export default function HeroVideoDialog({
     </div>
   );
 }
+

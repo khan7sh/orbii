@@ -105,16 +105,20 @@ export default function Home() {
           <section className="relative py-16">
             <h2 className="text-3xl font-bold mb-4 text-secondary text-center">Ready to Transform Your Business?</h2>
             <p className="text-lg mb-8 text-text-muted text-center">Schedule a discovery call with our AI experts and unlock your company's potential.</p>
-            <HeroVideoDialog
-              videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c"
-              thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
-              className="max-w-4xl mx-auto"
-            />
+            <div className="max-w-[853px] mx-auto">
+              <div className="relative aspect-w-16 aspect-h-9">
+                <HeroVideoDialog
+                  videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c"
+                  thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </div>
           </section>
 
-          <section className="relative py-16 text-center">
+          <section className="relative py-20 text-center">
             <Button
-              className="text-lg font-semibold mx-auto px-8 py-3 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              className="text-xl font-bold mx-auto px-10 py-4 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 rounded-full"
               onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
             >
               Book Discovery Call Now

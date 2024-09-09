@@ -7,6 +7,7 @@ import MobileMenu from '../components/MobileMenu';
 import { DotPattern } from "@/components/magicui/dot-pattern";
 import HeroVideoDialog from '@/components/magicui/hero-video-dialog';
 import ShimmerButton from '@/components/magicui/shimmer-button';
+import ShineBorder from '@/components/magicui/shine-border';
 
 export default function Component() {
   const [showAirtable, setShowAirtable] = useState(false)
@@ -105,15 +106,6 @@ export default function Component() {
             </div>
           </section>
           
-          {/* Add HeroVideoDialog right after the hero section */}
-          <section className="relative py-16">
-            <HeroVideoDialog
-              videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c"
-              thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
-              className="max-w-4xl mx-auto"
-            />
-          </section>
-
           {/* New section for the ShimmerButton */}
           <section className="relative py-16 text-center">
             <h2 className="text-3xl font-bold mb-4 text-secondary">Ready to Transform Your Business?</h2>
@@ -121,11 +113,20 @@ export default function Component() {
             <ShimmerButton
               shimmerColor="#ffffff"
               background="transparent"
-              className="text-lg font-semibold"
+              className="text-lg font-semibold mx-auto"
               onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
             >
               Book Discovery Call Now
             </ShimmerButton>
+          </section>
+          
+          {/* HeroVideoDialog section */}
+          <section className="relative py-16">
+            <HeroVideoDialog
+              videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c"
+              thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
+              className="max-w-4xl mx-auto"
+            />
           </section>
 
           {showAirtable && (
@@ -228,9 +229,11 @@ export default function Component() {
           </section>
           <section id="process" className="w-full py-20 md:py-32 bg-gradient-to-b from-white to-purple-50">
             <div className="container mx-auto px-4 md:px-6">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
-                Our Process
-              </h2>
+              <ShineBorder className="mb-12 mx-auto">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center text-secondary">
+                  Our Process
+                </h2>
+              </ShineBorder>
               <div className="max-w-4xl mx-auto">
                 <div className="space-y-12">
                   {[

@@ -106,20 +106,6 @@ export default function Component() {
             </div>
           </section>
           
-          {/* New section for the ShimmerButton */}
-          <section className="relative py-16 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-secondary">Ready to Transform Your Business?</h2>
-            <p className="text-lg mb-8 text-text-muted">Schedule a discovery call with our AI experts and unlock your company's potential.</p>
-            <ShimmerButton
-              shimmerColor="#ffffff"
-              background="transparent"
-              className="text-lg font-semibold mx-auto"
-              onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
-            >
-              Book Discovery Call Now
-            </ShimmerButton>
-          </section>
-          
           {/* HeroVideoDialog section */}
           <section className="relative py-16">
             <HeroVideoDialog
@@ -127,6 +113,20 @@ export default function Component() {
               thumbnailSrc="https://img.youtube.com/vi/GTIFPFqbB8c/maxresdefault.jpg"
               className="max-w-4xl mx-auto"
             />
+          </section>
+
+          {/* ShimmerButton section */}
+          <section className="relative py-16 text-center">
+            <h2 className="text-3xl font-bold mb-4 text-secondary">Ready to Transform Your Business?</h2>
+            <p className="text-lg mb-8 text-text-muted">Schedule a discovery call with our AI experts and unlock your company's potential.</p>
+            <ShimmerButton
+              shimmerColor="#ffffff"
+              background="linear-gradient(to right, #4F46E5, #7C3AED)"
+              className="text-lg font-semibold mx-auto px-8 py-3 text-white"
+              onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
+            >
+              Book Discovery Call Now
+            </ShimmerButton>
           </section>
 
           {showAirtable && (
@@ -229,11 +229,9 @@ export default function Component() {
           </section>
           <section id="process" className="w-full py-20 md:py-32 bg-gradient-to-b from-white to-purple-50">
             <div className="container mx-auto px-4 md:px-6">
-              <ShineBorder className="mb-12 mx-auto">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center text-secondary">
-                  Our Process
-                </h2>
-              </ShineBorder>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
+                Our Process
+              </h2>
               <div className="max-w-4xl mx-auto">
                 <div className="space-y-12">
                   {[

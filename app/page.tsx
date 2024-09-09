@@ -54,14 +54,12 @@ export default function Home() {
                 {item}
               </a>
             ))}
-            <ShimmerButton
-              shimmerColor="#ffffff"
-              background="linear-gradient(to right, #4F46E5, #7C3AED)"
-              className="text-sm py-2 px-4 text-white"
+            <Button
+              className="text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
             >
-              Get Started
-            </ShimmerButton>
+              Book a Call
+            </Button>
           </nav>
           <button className="sm:hidden text-primary" onClick={() => setMobileMenuOpen(true)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -85,14 +83,12 @@ export default function Home() {
                   with Optimize AI Agency.
                 </p>
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
-                  <ShimmerButton
-                    shimmerColor="#ffffff"
-                    background="linear-gradient(to right, #4F46E5, #7C3AED)"
-                    className="text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  <Button
+                    className="text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                     onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
                   >
                     Book a Call
-                  </ShimmerButton>
+                  </Button>
                   <Button 
                     variant="outline" 
                     className="border-primary text-primary hover:bg-primary/10 text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"

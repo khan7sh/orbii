@@ -57,6 +57,7 @@ export default function Home() {
             <Button
               className="text-sm font-medium py-2 px-4 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all duration-300"
               onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
+              style={{ opacity: 1 }}
             >
               Get Started
             </Button>

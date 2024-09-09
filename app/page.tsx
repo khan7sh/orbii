@@ -229,60 +229,52 @@ export default function Home() {
 
           <section id="process" className="w-full py-20 md:py-32">
             <div className="container mx-auto px-4 md:px-6">
-              <ShineBorder 
-                borderRadius={16} 
-                borderWidth={2} 
-                color={["#4F46E5", "#7C3AED"]} 
-                duration={10}
-                className="max-w-4xl mx-auto"
-              >
-                <div className="bg-white p-8 rounded-xl">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center text-secondary mb-12">
-                    Our Process
-                  </h2>
-                  <div className="space-y-12">
-                    {[
-                      { 
-                        icon: Search, 
-                        title: "AI Readiness Consultation", 
-                        description: "We start by understanding your vision. Our initial consultation aligns our AI solutions with your business goals.",
-                        step: "STEP 1"
-                      },
-                      { 
-                        icon: BarChart, 
-                        title: "Transparent Progress Tracking", 
-                        description: "Your dedicated customer portal allows for real-time progress tracking and feedback, ensuring our solutions evolve with your needs.",
-                        step: "STEP 2"
-                      },
-                      { 
-                        icon: Code, 
-                        title: "Seamless Integration", 
-                        description: "We'll embed your new AI agents into your business, ensuring they deliver real value from day one.",
-                        step: "STEP 3"
-                      },
-                      { 
-                        icon: Cog, 
-                        title: "Ongoing Support", 
-                        description: "We'll keep adding more agents, refining and expanding their capabilities to keep your company ahead of the game.",
-                        step: "STEP 4"
-                      },
-                    ].map((step, index) => (
-                      <div key={index} className="flex items-start space-x-6">
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                            {React.createElement(step.icon, { className: "w-8 h-8 text-white" })}
-                          </div>
-                        </div>
-                        <div className="flex-grow">
-                          <div className="text-sm font-semibold text-primary mb-1">{step.step}</div>
-                          <h3 className="text-xl font-bold text-secondary mb-2">{step.title}</h3>
-                          <p className="text-text-muted">{step.description}</p>
+              <div className="bg-white p-8 rounded-xl max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center text-secondary mb-12">
+                  Our Process
+                </h2>
+                <div className="space-y-12">
+                  {[
+                    { 
+                      icon: Search, 
+                      title: "AI Readiness Consultation", 
+                      description: "We start by understanding your vision. Our initial consultation aligns our AI solutions with your business goals.",
+                      step: "STEP 1"
+                    },
+                    { 
+                      icon: BarChart, 
+                      title: "Transparent Progress Tracking", 
+                      description: "Your dedicated customer portal allows for real-time progress tracking and feedback, ensuring our solutions evolve with your needs.",
+                      step: "STEP 2"
+                    },
+                    { 
+                      icon: Code, 
+                      title: "Seamless Integration", 
+                      description: "We'll embed your new AI agents into your business, ensuring they deliver real value from day one.",
+                      step: "STEP 3"
+                    },
+                    { 
+                      icon: Cog, 
+                      title: "Ongoing Support", 
+                      description: "We'll keep adding more agents, refining and expanding their capabilities to keep your company ahead of the game.",
+                      step: "STEP 4"
+                    },
+                  ].map((step, index) => (
+                    <div key={index} className="flex items-start space-x-6">
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                          {React.createElement(step.icon, { className: "w-8 h-8 text-white" })}
                         </div>
                       </div>
-                    ))}
-                  </div>
+                      <div className="flex-grow">
+                        <div className="text-sm font-semibold text-primary mb-1">{step.step}</div>
+                        <h3 className="text-xl font-bold text-secondary mb-2">{step.title}</h3>
+                        <p className="text-text-muted">{step.description}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </ShineBorder>
+              </div>
             </div>
           </section>
 

@@ -292,20 +292,22 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
                 Contact Us
               </h2>
-              <div className="flex flex-col items-center space-y-6">
-                <p className="text-lg text-text-muted text-center max-w-2xl mb-4">
-                  Ready to revolutionize your business with AI? Get in touch with us today!
-                </p>
-                <a href="mailto:contact@optimizeai.agency" className="text-primary hover:text-primary/80 transition-colors text-lg font-medium mb-4">
-                  contact@optimizeai.agency
-                </a>
-                <Button
-                  className="w-full max-w-md bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-300"
-                  onClick={() => window.open('https://calendly.com/contact-optimizeai/30min', '_blank')}
-                >
-                  <Calendar className="mr-2 h-4 w-4" />
-                  Schedule a Call
-                </Button>
+              <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+                <div className="flex flex-col items-center space-y-6">
+                  <p className="text-lg text-text-muted text-center mb-4">
+                    Ready to revolutionize your business with AI? Get in touch with us today!
+                  </p>
+                  <a href="mailto:contact@optimizeai.agency" className="text-primary hover:text-primary/80 transition-colors text-lg font-medium mb-4">
+                    contact@optimizeai.agency
+                  </a>
+                  <Button
+                    className="w-full max-w-md bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg"
+                    onClick={() => window.open('https://calendly.com/contact-optimizeai/30min', '_blank')}
+                  >
+                    <Calendar className="mr-2 h-4 w-4" />
+                    Schedule a Call
+                  </Button>
+                </div>
               </div>
             </div>
           </section>

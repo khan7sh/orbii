@@ -83,17 +83,15 @@ export default function HeroVideoDialog({
   }, [videoSrc]);
 
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative w-full max-w-[853px] mx-auto", className)}>
       <div
-        className="relative cursor-pointer group"
+        className="relative cursor-pointer group aspect-video"
         onClick={() => setIsVideoOpen(true)}
       >
         <img
           src={thumbnailSrc}
           alt="Video thumbnail"
-          width={1920}
-          height={1080}
-          className="w-full transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md shadow-lg border"
+          className="w-full h-full object-cover transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md shadow-lg border"
         />
         <div className="absolute inset-0 flex items-center justify-center group-hover:scale-100 scale-[0.9] transition-all duration-200 ease-out rounded-2xl">
           <div className="bg-primary/10 flex items-center justify-center rounded-full backdrop-blur-md size-28">
@@ -123,22 +121,28 @@ export default function HeroVideoDialog({
             <motion.div
               {...selectedAnimation}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="relative w-full max-w-4xl aspect-video mx-4 md:mx-0"
+              className="relative w-full max-w-[853px] aspect-video mx-4 md:mx-0"
             >
-              <motion.button className="absolute -top-16 right-0 text-white text-xl bg-neutral-900/50 ring-1 backdrop-blur-md rounded-full p-2 dark:bg-neutral-100/50 dark:text-black">
+              <motion.button 
+                className="absolute -top-12 right-0 text-white text-xl bg-neutral-900/50 ring-1 backdrop-blur-md rounded-full p-2 dark:bg-neutral-100/50 dark:text-black"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsVideoOpen(false);
+                }}
+              >
                 <XIcon className="size-5" />
               </motion.button>
-              <div className="size-full border-2 border-white rounded-2xl overflow-hidden isolate z-[1] relative">
+              <div className="w-full h-full border-2 border-white rounded-2xl overflow-hidden isolate z-[1] relative">
                 <iframe
-                  width="560"
-                  height="315"
+                  width="853"
+                  height="480"
                   src={videoSrc}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
-                  className="size-full rounded-2xl"
+                  className="w-full h-full rounded-2xl"
                 ></iframe>
               </div>
             </motion.div>

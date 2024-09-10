@@ -3,18 +3,23 @@
 import { Button } from "@/components/ui/button"
 import { Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot, X, Atom, Mail, Calendar, Mic } from "lucide-react"
 import Link from "next/link"
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import MobileMenu from '@/components/MobileMenu';
 import { DotPattern } from "@/components/magicui/dot-pattern";
 import HeroVideoDialog from '@/components/magicui/hero-video-dialog';
 import ShimmerButton from '@/components/magicui/shimmer-button';
 import ShineBorder from '@/components/magicui/shine-border';
+import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
 export default function Home() {
   const [showAirtable, setShowAirtable] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const menuItems = ['Services', 'Features', 'Process', 'Contact'];
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const fromRef = useRef<HTMLDivElement>(null);
+  const toRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleSmoothScroll = (e: Event) => {
@@ -135,6 +140,47 @@ export default function Home() {
                       Book Discovery Call
                     </Button>
                   </div>
+                </div>
+              </div>
+            </section>
+
+            {/* AI Integration Showcase */}
+            <section className="w-full py-20 md:py-32 relative overflow-hidden" ref={containerRef}>
+              <div className="container mx-auto px-4 md:px-6 relative z-10">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
+                  Seamless AI Integration
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                  <div className="space-y-6" ref={fromRef}>
+                    <h3 className="text-2xl font-semibold text-primary">Your Business</h3>
+                    <p className="text-text-muted">
+                      Traditional processes, manual tasks, and time-consuming operations.
+                    </p>
+                  </div>
+                  <div className="space-y-6" ref={toRef}>
+                    <h3 className="text-2xl font-semibold text-primary">AI-Powered Solutions</h3>
+                    <p className="text-text-muted">
+                      Automated workflows, intelligent decision-making, and optimized performance.
+                    </p>
+                  </div>
+                </div>
+                <AnimatedBeam
+                  containerRef={containerRef}
+                  fromRef={fromRef}
+                  toRef={toRef}
+                  curvature={100}
+                  duration={3}
+                  delay={0.2}
+                  gradientStartColor="#9333ea"
+                  gradientStopColor="#4f46e5"
+                />
+                <div className="mt-16 text-center">
+                  <ShimmerButton
+                    className="rounded-full"
+                    onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
+                  >
+                    Transform Your Business with AI
+                  </ShimmerButton>
                 </div>
               </div>
             </section>

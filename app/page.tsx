@@ -289,10 +289,10 @@ export default function Home() {
 
           <section id="contact" className="w-full py-20 md:py-32 bg-gradient-to-b from-gray-50 to-purple-100">
             <div className="container mx-auto px-4 md:px-6">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
-                Contact Us
-              </h2>
               <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 text-secondary">
+                  Contact Us
+                </h2>
                 <div className="flex flex-col items-center space-y-6">
                   <p className="text-lg text-text-muted text-center mb-4">
                     Ready to revolutionize your business with AI? Get in touch with us today!
@@ -321,13 +321,10 @@ export default function Home() {
               </div>
               <p className="text-text-muted text-sm">Revolutionizing businesses with cutting-edge AI solutions.</p>
               <div className="flex space-x-4">
-                <a href="#" className="text-primary hover:text-primary/80 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                </a>
-                <a href="#" className="text-primary hover:text-primary/80 transition-colors">
+                <a href="https://instagram.com/optimizeai.agency" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
-                <a href="#" className="text-primary hover:text-primary/80 transition-colors">
+                <a href="https://x.com/optimizeai_" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.6-4.2 4-6.6 6-3.8 1.1 1.3 1.8 2.8 1.9 4.3.1.4.4.8.8.8z"></path></svg>
                 </a>
               </div>

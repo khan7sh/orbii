@@ -10,17 +10,11 @@ import { DotPattern } from "@/components/magicui/dot-pattern";
 import HeroVideoDialog from '@/components/magicui/hero-video-dialog';
 import ShimmerButton from '@/components/magicui/shimmer-button';
 import ShineBorder from '@/components/magicui/shine-border';
-import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
 export default function Home() {
   const [showAirtable, setShowAirtable] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const menuItems = ['Services', 'Features', 'Process', 'Contact'];
-
-  const containerRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLDivElement>(null);
-  const processingRef = useRef<HTMLDivElement>(null);
-  const outputRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleSmoothScroll = (e: Event) => {
@@ -141,78 +135,6 @@ export default function Home() {
                       Book Discovery Call
                     </Button>
                   </div>
-                </div>
-              </div>
-            </section>
-
-            {/* AI-Powered Pipeline Showcase */}
-            <section className="w-full py-20 md:py-32 relative overflow-hidden" ref={containerRef}>
-              <div className="container mx-auto px-4 md:px-6 relative z-10">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-16 text-secondary">
-                  AI-Powered <span className="text-primary">Solutions Pipeline</span>
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-12">
-                  <div className="space-y-4 text-center" ref={inputRef}>
-                    <div className="w-24 h-24 mx-auto bg-purple-100 rounded-full flex items-center justify-center">
-                      <MessageSquare className="h-12 w-12 text-primary" />
-                    </div>
-                    <h3 className="text-2xl font-semibold text-secondary">Input</h3>
-                    <ul className="text-text-muted space-y-2">
-                      <li>Customer Inquiries</li>
-                      <li>Business Data</li>
-                      <li>Market Trends</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-4 text-center" ref={processingRef}>
-                    <div className="w-24 h-24 mx-auto bg-indigo-100 rounded-full flex items-center justify-center">
-                      <Bot className="h-12 w-12 text-primary" />
-                    </div>
-                    <h3 className="text-2xl font-semibold text-secondary">AI Processing</h3>
-                    <ul className="text-text-muted space-y-2">
-                      <li>Natural Language Processing</li>
-                      <li>Predictive Analytics</li>
-                      <li>Automated Decision Making</li>
-                    </ul>
-                  </div>
-                  <div className="space-y-4 text-center" ref={outputRef}>
-                    <div className="w-24 h-24 mx-auto bg-purple-100 rounded-full flex items-center justify-center">
-                      <Zap className="h-12 w-12 text-primary" />
-                    </div>
-                    <h3 className="text-2xl font-semibold text-secondary">Output</h3>
-                    <ul className="text-text-muted space-y-2">
-                      <li>Intelligent Responses</li>
-                      <li>Optimized Workflows</li>
-                      <li>Data-Driven Insights</li>
-                    </ul>
-                  </div>
-                </div>
-                <AnimatedBeam
-                  containerRef={containerRef}
-                  fromRef={inputRef}
-                  toRef={processingRef}
-                  curvature={50}
-                  duration={2}
-                  delay={0.2}
-                  gradientStartColor="#9333ea"
-                  gradientStopColor="#4f46e5"
-                />
-                <AnimatedBeam
-                  containerRef={containerRef}
-                  fromRef={processingRef}
-                  toRef={outputRef}
-                  curvature={50}
-                  duration={2}
-                  delay={0.4}
-                  gradientStartColor="#4f46e5"
-                  gradientStopColor="#9333ea"
-                />
-                <div className="mt-16 text-center">
-                  <ShimmerButton
-                    className="rounded-full text-lg px-8 py-3"
-                    onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
-                  >
-                    Transform Your Business with AI
-                  </ShimmerButton>
                 </div>
               </div>
             </section>

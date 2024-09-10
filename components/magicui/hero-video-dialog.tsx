@@ -92,12 +92,13 @@ export default function HeroVideoDialog({
             <span>Image not found</span>
           </div>
         ) : (
-          <Image
+          <img
             src={thumbnailSrc}
             alt={thumbnailAlt}
-            width={1920}
-            height={1080}
-            onError={() => setImageError(true)}
+            onError={(e) => {
+              console.error("Image load error:", e);
+              setImageError(true);
+            }}
             className="w-full transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md shadow-lg border"
           />
         )}

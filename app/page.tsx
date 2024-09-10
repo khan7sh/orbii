@@ -19,6 +19,7 @@ export default function Home() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const fromRef = useRef<HTMLDivElement>(null);
+  const middleRef = useRef<HTMLDivElement>(null);
   const toRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -144,42 +145,67 @@ export default function Home() {
               </div>
             </section>
 
-            {/* AI Integration Showcase */}
+            {/* AI-Powered Pipeline Showcase */}
             <section className="w-full py-20 md:py-32 relative overflow-hidden" ref={containerRef}>
               <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
-                  Seamless AI Integration
+                  AI-Powered <span className="text-primary">Pipeline</span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                  <div className="space-y-6" ref={fromRef}>
-                    <h3 className="text-2xl font-semibold text-primary">Your Business</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                  <div className="space-y-4 text-center" ref={fromRef}>
+                    <div className="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center">
+                      <MessageSquare className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-secondary">Input</h3>
                     <p className="text-text-muted">
-                      Traditional processes, manual tasks, and time-consuming operations.
+                      Customer inquiries, data streams, and business processes
                     </p>
                   </div>
-                  <div className="space-y-6" ref={toRef}>
-                    <h3 className="text-2xl font-semibold text-primary">AI-Powered Solutions</h3>
+                  <div className="space-y-4 text-center" ref={middleRef}>
+                    <div className="w-16 h-16 mx-auto bg-indigo-100 rounded-full flex items-center justify-center">
+                      <Bot className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-secondary">AI Processing</h3>
                     <p className="text-text-muted">
-                      Automated workflows, intelligent decision-making, and optimized performance.
+                      Intelligent analysis, decision-making, and automation
+                    </p>
+                  </div>
+                  <div className="space-y-4 text-center" ref={toRef}>
+                    <div className="w-16 h-16 mx-auto bg-purple-100 rounded-full flex items-center justify-center">
+                      <Zap className="h-8 w-8 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-secondary">Output</h3>
+                    <p className="text-text-muted">
+                      Optimized workflows, insights, and enhanced customer experiences
                     </p>
                   </div>
                 </div>
                 <AnimatedBeam
                   containerRef={containerRef}
                   fromRef={fromRef}
-                  toRef={toRef}
-                  curvature={100}
-                  duration={3}
+                  toRef={middleRef}
+                  curvature={50}
+                  duration={2}
                   delay={0.2}
                   gradientStartColor="#9333ea"
                   gradientStopColor="#4f46e5"
+                />
+                <AnimatedBeam
+                  containerRef={containerRef}
+                  fromRef={middleRef}
+                  toRef={toRef}
+                  curvature={50}
+                  duration={2}
+                  delay={0.4}
+                  gradientStartColor="#4f46e5"
+                  gradientStopColor="#9333ea"
                 />
                 <div className="mt-16 text-center">
                   <ShimmerButton
                     className="rounded-full"
                     onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
                   >
-                    Transform Your Business with AI
+                    Revolutionize Your Business with AI
                   </ShimmerButton>
                 </div>
               </div>

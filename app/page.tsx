@@ -293,25 +293,19 @@ export default function Home() {
                 Contact Us
               </h2>
               <div className="flex flex-col items-center space-y-6">
-                <p className="text-lg text-text-muted text-center max-w-2xl mb-8">
+                <p className="text-lg text-text-muted text-center max-w-2xl mb-4">
                   Ready to revolutionize your business with AI? Get in touch with us today!
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
-                  <Button
-                    className="w-full bg-primary text-white hover:bg-primary/90 transition-colors duration-300"
-                    onClick={() => window.location.href = 'mailto:contact@optimizeai.com'}
-                  >
-                    <Mail className="mr-2 h-4 w-4" />
-                    Email Us
-                  </Button>
-                  <Button
-                    className="w-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300"
-                    onClick={() => window.open('https://calendly.com/contact-optimizeai/30min', '_blank')}
-                  >
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Schedule a Call
-                  </Button>
-                </div>
+                <a href="mailto:contact@optimizeai.agency" className="text-primary hover:text-primary/80 transition-colors text-lg font-medium mb-4">
+                  contact@optimizeai.agency
+                </a>
+                <Button
+                  className="w-full max-w-md bg-teal-600 text-white hover:bg-teal-700 transition-colors duration-300"
+                  onClick={() => window.open('https://calendly.com/contact-optimizeai/30min', '_blank')}
+                >
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Schedule a Call
+                </Button>
               </div>
             </div>
           </section>

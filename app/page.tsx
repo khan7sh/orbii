@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot, X, Atom, Mail, Calendar } from "lucide-react"
+import { Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot, X, Atom, Mail, Calendar, Mic } from "lucide-react"
 import Link from "next/link"
 import React, { useState, useEffect } from 'react'
 import ErrorBoundary from '@/components/ErrorBoundary'
@@ -135,6 +135,12 @@ export default function Home() {
                       title: "AI Agents Development",
                       description: "Optimize operations with cutting-edge AI agents and decision systems.",
                       features: ["Self-adaptive systems", "Real-time processing", "Predictive analytics"]
+                    },
+                    {
+                      icon: Mic,
+                      title: "Voice AI Agents",
+                      description: "Transform your communication with intelligent voice-powered AI solutions.",
+                      features: ["Call centre automation", "Appointment setter", "Inbound calls agent"]
                     },
                   ].map((service, index) => (
                     <div

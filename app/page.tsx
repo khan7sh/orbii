@@ -123,7 +123,7 @@ export default function Home() {
                 </div>
                 <div className="max-w-4xl mx-auto">
                   <HeroVideoDialog
-                    videoSrc="https://www.youtube.com/embed/your_video_id"
+                    videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c?si=itOuB2GYYZoAWGgL"
                     animationStyle="from-bottom"
                     className="w-full aspect-video mb-8"
                   />

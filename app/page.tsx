@@ -102,21 +102,27 @@ export default function Home() {
             </div>
           </section>
           
-          <section className="relative py-16 mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-secondary text-center">Ready to Transform Your Business?</h2>
-            <p className="text-lg mb-8 text-text-muted text-center">Schedule a discovery call with our AI experts and unlock your company's potential.</p>
-            <HeroVideoDialog
-              videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c?si=RPxiVDoF6aHM6NUv"
-            />
-          </section>
-
-          <section className="relative py-20 text-center">
-            <Button
-              className="text-xl font-bold mx-auto px-10 py-4 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 rounded-full"
-              onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
-            >
-              Book Discovery Call Now
-            </Button>
+          <section className="relative py-16">
+            <div className="container mx-auto px-4 md:px-6">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-secondary text-center">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-lg mb-8 text-text-muted text-center max-w-2xl mx-auto">
+                Schedule a discovery call with our AI experts and unlock your company's potential.
+              </p>
+              <HeroVideoDialog
+                videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c?si=RPxiVDoF6aHM6NUv"
+                className="mb-12"
+              />
+              <div className="text-center">
+                <Button
+                  className="text-xl font-bold px-10 py-4 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 rounded-full"
+                  onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
+                >
+                  Book Discovery Call Now
+                </Button>
+              </div>
+            </div>
           </section>
 
           {showAirtable && (

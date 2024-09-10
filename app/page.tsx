@@ -109,7 +109,6 @@ export default function Home() {
               <div className="relative aspect-w-16 aspect-h-9">
                 <HeroVideoDialog
                   videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c?si=RPxiVDoF6aHM6NUv"
-                  thumbnailSrc="/orr.png"
                   className="w-full h-full"
                 />
               </div>

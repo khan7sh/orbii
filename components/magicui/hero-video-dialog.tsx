@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 
 type AnimationStyle =
@@ -19,8 +18,6 @@ type AnimationStyle =
 interface HeroVideoProps {
   animationStyle?: AnimationStyle;
   videoSrc: string;
-  thumbnailSrc: string;
-  thumbnailAlt?: string;
   className?: string;
 }
 
@@ -70,12 +67,20 @@ const animationVariants = {
 export default function HeroVideoDialog({
   animationStyle = "from-center",
   videoSrc,
-  thumbnailSrc,
-  thumbnailAlt = "Video thumbnail",
   className,
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [thumbnailSrc, setThumbnailSrc] = useState("");
   const selectedAnimation = animationVariants[animationStyle];
+
+  useEffect(() => {
+    // Extract video ID from the YouTube embed URL
+    const videoId = videoSrc.split('/').pop()?.split('?')[0];
+    if (videoId) {
+      // Set the high-quality thumbnail URL
+      setThumbnailSrc(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`);
+    }
+  }, [videoSrc]);
 
   return (
     <div className={cn("relative", className)}>
@@ -85,7 +90,7 @@ export default function HeroVideoDialog({
       >
         <img
           src={thumbnailSrc}
-          alt={thumbnailAlt}
+          alt="Video thumbnail"
           width={1920}
           height={1080}
           className="w-full transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md shadow-lg border"

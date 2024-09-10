@@ -106,6 +106,15 @@ export default function Home() {
                       Let's Talk
                     </Button>
                   </div>
+                  
+                  {/* Add HeroVideoDialog here */}
+                  <div className="w-full max-w-4xl mx-auto mt-12">
+                    <HeroVideoDialog
+                      videoSrc="https://www.youtube.com/embed/your_video_id"
+                      animationStyle="from-bottom"
+                      className="w-full aspect-video"
+                    />
+                  </div>
                 </div>
               </div>
             </section>

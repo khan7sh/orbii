@@ -38,9 +38,15 @@ export default function Home() {
 
   return (
     <ErrorBoundary>
-      <div className="flex flex-col min-h-[100dvh] bg-background text-text">
-        <DotPattern className="opacity-30" />
-        <header className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between border-b border-gray-200">
+      <div className="flex flex-col min-h-[100dvh] bg-background text-text relative overflow-hidden">
+        {/* Add gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-100/70 via-white/70 to-purple-100/70"></div>
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-radial from-purple-300/20 to-transparent animate-pulse"></div>
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob"></div>
+        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-blob animation-delay-2000"></div>
+
+        <header className="container mx-auto px-4 lg:px-6 h-20 flex items-center justify-between border-b border-gray-200 relative z-10">
           <Link className="flex items-center justify-center" href="#">
             <div className="relative">
               <Atom className="h-8 w-8 sm:h-10 sm:w-10 text-primary" />
@@ -67,7 +73,7 @@ export default function Home() {
           </button>
         </header>
         {mobileMenuOpen && <MobileMenu onClose={() => setMobileMenuOpen(false)} />}
-        <main className="flex-1">
+        <main className="flex-1 relative z-10">
           <section className="w-full h-[calc(100vh-5rem)] flex items-center py-12 sm:py-20 md:py-32 lg:py-0 bg-gradient-to-br from-purple-100/70 via-white/70 to-purple-100/70 relative overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
             <div className="absolute inset-0 bg-gradient-radial from-purple-300/20 to-transparent animate-pulse"></div>
@@ -297,6 +303,9 @@ export default function Home() {
                   <p className="text-lg text-text-muted text-center mb-4">
                     Ready to revolutionize your business with AI? Get in touch with us today!
                   </p>
+                  <p className="text-sm text-text-muted text-center">
+                    © 2024 Optimize AI Agency. All rights reserved.
+                  </p>
                   <a href="mailto:contact@optimizeai.agency" className="text-primary hover:text-primary/80 transition-colors text-lg font-medium mb-4">
                     contact@optimizeai.agency
                   </a>
@@ -312,7 +321,7 @@ export default function Home() {
             </div>
           </section>
         </main>
-        <footer className="bg-purple-100 border-t border-purple-200">
+        <footer className="bg-purple-100 border-t border-purple-200 relative z-10">
           <div className="container mx-auto px-4 md:px-6 py-8">
             <div className="flex flex-col items-center space-y-4">
               <div className="flex items-center space-x-4">
@@ -320,7 +329,7 @@ export default function Home() {
                 <span className="text-lg font-bold text-secondary">Optimize AI Agency</span>
               </div>
               <p className="text-text-muted text-sm">Revolutionizing businesses with cutting-edge AI solutions.</p>
-              <div className="flex space-x-4">
+              <div className="flex justify-center space-x-6 w-full">
                 <a href="https://instagram.com/optimizeai.agency" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>

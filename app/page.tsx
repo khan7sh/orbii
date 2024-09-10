@@ -106,20 +106,40 @@ export default function Home() {
                       Let's Talk
                     </Button>
                   </div>
-                  
-                  {/* Add HeroVideoDialog here */}
-                  <div className="w-full max-w-4xl mx-auto mt-12">
-                    <HeroVideoDialog
-                      videoSrc="https://www.youtube.com/embed/your_video_id"
-                      animationStyle="from-bottom"
-                      className="w-full aspect-video"
-                    />
-                  </div>
                 </div>
               </div>
             </section>
             
-            {/* Other sections */}
+            {/* Video section */}
+            <section className="w-full py-20 md:py-32 relative">
+              <div className="container mx-auto px-4 md:px-6 relative z-10">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-secondary mb-4">
+                    Ready to Transform Your Business?
+                  </h2>
+                  <p className="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto">
+                    Watch our video to see how Optimize AI Agency can revolutionize your operations with cutting-edge AI solutions.
+                  </p>
+                </div>
+                <div className="max-w-4xl mx-auto">
+                  <HeroVideoDialog
+                    videoSrc="https://www.youtube.com/embed/your_video_id"
+                    animationStyle="from-bottom"
+                    className="w-full aspect-video mb-8"
+                  />
+                  <div className="text-center">
+                    <Button
+                      className="text-lg sm:text-xl py-3 sm:py-4 px-6 sm:px-8 text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                      onClick={() => window.open("https://calendly.com/contact-optimizeai/30min", "_blank")}
+                    >
+                      Book Discovery Call
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Services section */}
             <section id="services" className="w-full py-20 md:py-32 relative">
               <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">

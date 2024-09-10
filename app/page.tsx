@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import { Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot, X, Atom } from "lucide-react"
+import { Rocket, Zap, Search, Code, BarChart, Users, CheckCircle, MessageSquare, Cog, Bot, X, Atom, Mail, Calendar } from "lucide-react"
 import Link from "next/link"
 import React, { useState, useEffect } from 'react'
 import ErrorBoundary from '@/components/ErrorBoundary'
@@ -292,18 +292,26 @@ export default function Home() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
                 Contact Us
               </h2>
-              <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-                {[
-                  { icon: Users, title: "Meet Our Team", description: "Get to know the people behind the innovation." },
-                  { icon: Code, title: "Explore Our Work", description: "See our latest projects and case studies." },
-                  { icon: MessageSquare, title: "Join Our Community", description: "Stay updated with our newsletter and events." },
-                ].map((contactItem, index) => (
-                  <div key={index} className="flex flex-col items-center text-center group p-6 rounded-lg transition-all duration-300 hover:bg-white hover:shadow-xl">
-                    {React.createElement(contactItem.icon, { className: "h-16 w-16 mb-6 text-primary group-hover:scale-110 transition-transform duration-300" })}
-                    <h3 className="text-xl font-bold mb-3 text-secondary">{contactItem.title}</h3>
-                    <p className="text-text-muted">{contactItem.description}</p>
-                  </div>
-                ))}
+              <div className="flex flex-col items-center space-y-6">
+                <p className="text-lg text-text-muted text-center max-w-2xl mb-8">
+                  Ready to revolutionize your business with AI? Get in touch with us today!
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-md">
+                  <Button
+                    className="w-full bg-primary text-white hover:bg-primary/90 transition-colors duration-300"
+                    onClick={() => window.location.href = 'mailto:contact@optimizeai.com'}
+                  >
+                    <Mail className="mr-2 h-4 w-4" />
+                    Email Us
+                  </Button>
+                  <Button
+                    className="w-full bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300"
+                    onClick={() => window.open('https://calendly.com/contact-optimizeai/30min', '_blank')}
+                  >
+                    <Calendar className="mr-2 h-4 w-4" />
+                    Schedule a Call
+                  </Button>
+                </div>
               </div>
             </div>
           </section>

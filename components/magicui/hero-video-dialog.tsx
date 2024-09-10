@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
-import Image from 'next/image';
 
 import { cn } from "@/lib/utils";
 
@@ -70,16 +69,13 @@ const animationVariants = {
 
 export default function HeroVideoDialog({
   animationStyle = "from-center",
-  videoSrc = "https://www.youtube.com/embed/GTIFPFqbB8c",
-  thumbnailSrc = "/orr.png",  // Set default to /orr.png
+  videoSrc,
+  thumbnailSrc,
   thumbnailAlt = "Video thumbnail",
   className,
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const [imageError, setImageError] = useState(false);
   const selectedAnimation = animationVariants[animationStyle];
-
-  console.log("Thumbnail src:", thumbnailSrc);  // Add this line
 
   return (
     <div className={cn("relative", className)}>
@@ -87,21 +83,13 @@ export default function HeroVideoDialog({
         className="relative cursor-pointer group"
         onClick={() => setIsVideoOpen(true)}
       >
-        {imageError ? (
-          <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-            <span>Image not found</span>
-          </div>
-        ) : (
-          <img
-            src={thumbnailSrc}
-            alt={thumbnailAlt}
-            onError={(e) => {
-              console.error("Image load error:", e);
-              setImageError(true);
-            }}
-            className="w-full transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md shadow-lg border"
-          />
-        )}
+        <img
+          src={thumbnailSrc}
+          alt={thumbnailAlt}
+          width={1920}
+          height={1080}
+          className="w-full transition-all duration-200 group-hover:brightness-[0.8] ease-out rounded-md shadow-lg border"
+        />
         <div className="absolute inset-0 flex items-center justify-center group-hover:scale-100 scale-[0.9] transition-all duration-200 ease-out rounded-2xl">
           <div className="bg-primary/10 flex items-center justify-center rounded-full backdrop-blur-md size-28">
             <div
@@ -137,10 +125,15 @@ export default function HeroVideoDialog({
               </motion.button>
               <div className="size-full border-2 border-white rounded-2xl overflow-hidden isolate z-[1] relative">
                 <iframe
-                  src={`${videoSrc}?autoplay=1`}
-                  className="size-full rounded-2xl"
-                  allowFullScreen
+                  width="560"
+                  height="315"
+                  src={videoSrc}
+                  title="YouTube video player"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="size-full rounded-2xl"
                 ></iframe>
               </div>
             </motion.div>

@@ -116,7 +116,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-secondary">
                   Our Services
                 </h2>
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                   {[
                     {
                       icon: MessageSquare,
@@ -147,26 +147,26 @@ export default function Home() {
                       key={index}
                       className="bg-white/80 backdrop-blur-sm transition-all duration-300 hover:shadow-2xl group overflow-hidden rounded-2xl flex flex-col h-full"
                     >
-                      <div className="p-4 flex-grow">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                          {React.createElement(service.icon, { className: "h-5 w-5 text-primary" })}
+                      <div className="p-6 flex-grow">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors duration-300">
+                          {React.createElement(service.icon, { className: "h-6 w-6 text-primary" })}
                         </div>
-                        <h3 className="text-lg font-bold mb-2 text-secondary group-hover:text-primary transition-colors duration-300">{service.title}</h3>
-                        <p className="text-text-muted text-sm mb-4">{service.description}</p>
-                        <ul className="text-xs text-text-muted space-y-1 mb-4">
+                        <h3 className="text-xl font-bold mb-3 text-secondary group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                        <p className="text-text-muted text-base mb-5">{service.description}</p>
+                        <ul className="text-sm text-text-muted space-y-2 mb-5">
                           {service.features.map((feature, featureIndex) => (
                             <li key={featureIndex} className="flex items-center">
-                              <CheckCircle className="h-3 w-3 mr-1 text-primary" />
+                              <CheckCircle className="h-4 w-4 mr-2 text-primary" />
                               {feature}
                             </li>
                           ))}
                         </ul>
                       </div>
-                      <div className="px-4 pb-4 mt-auto">
+                      <div className="px-6 pb-6 mt-auto">
                         <Button
                           asChild
                           variant="outline"
-                          className="w-full border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300 text-sm py-1"
+                          className="w-full border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300 text-base py-2"
                         >
                           <a href="https://calendly.com/contact-optimizeai/30min">
                             Learn More

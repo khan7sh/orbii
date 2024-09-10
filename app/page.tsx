@@ -104,11 +104,18 @@ export default function Home() {
           
           <section className="relative py-16">
             <div className="container mx-auto px-4 md:px-6">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-secondary text-center">
-                Ready to Transform Your Business?
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center">
+                Ready to{" "}
+                <span className="bg-gradient-to-r from-purple-600 to-indigo-600 text-transparent bg-clip-text">
+                  Transform
+                </span>{" "}
+                Your Business?
               </h2>
-              <p className="text-lg mb-8 text-text-muted text-center max-w-2xl mx-auto">
-                Schedule a discovery call with our AI experts and unlock your company's potential.
+              <p className="text-lg sm:text-xl mb-10 text-text-muted text-center max-w-2xl mx-auto leading-relaxed">
+                Schedule a discovery call with our{" "}
+                <span className="font-semibold text-primary">AI experts</span> and{" "}
+                <span className="font-semibold text-secondary">unlock</span> your company's{" "}
+                <span className="font-semibold text-primary">potential</span>.
               </p>
               <HeroVideoDialog
                 videoSrc="https://www.youtube.com/embed/GTIFPFqbB8c?si=RPxiVDoF6aHM6NUv"

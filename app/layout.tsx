@@ -5,8 +5,11 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Your App Title',
-  description: 'Your app description',
+  title: 'Optimize AI Agency',
+  description: 'Revolutionizing businesses with cutting-edge AI solutions.',
+  icons: {
+    icon: '/optimize-ai-logo.svg',
+  },
 }
 
 export default function RootLayout({

@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'standalone',
-  useFileSystemPublicRoutes: true,
-  experimental: {},
-  images: {
-    domains: ['img.youtube.com'],  // Add this if you're using YouTube thumbnails
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+    return config;
   },
 }
 

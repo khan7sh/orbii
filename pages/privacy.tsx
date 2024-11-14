@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
           If you have any questions about this Privacy Policy, please contact us at:
         </p>
         <p>Email: contact@optimizeai.agency</p>
-        <p>Address: United Kingdom CB1 1PT</p>
+        <p>Address: United Kingdom</p>
       </div>
       <Link href="/" className="text-primary hover:underline mt-8 inline-block">
         Back to Home

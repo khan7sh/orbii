@@ -10,13 +10,14 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
+    "@supabase/supabase-js": "^2.46.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.11.17",
     "lucide-react": "^0.429.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "framer-motion": "latest",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {

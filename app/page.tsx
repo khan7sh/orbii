@@ -61,6 +61,37 @@ export default function Home() {
     };
   }, []);
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    try {
+      const formData = new FormData(e.currentTarget);
+      const data = {
+        name: formData.get('name') as string,
+        email: formData.get('email') as string,
+        message: formData.get('message') as string,
+      };
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      setShowToast(true);
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error('Error submitting form:', error instanceof Error ? error.message : 'An unknown error occurred');
+      // You could also set an error state here to show to the user
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-[100dvh] bg-background text-text relative overflow-hidden">
       {/* Global background elements */}
@@ -383,97 +414,35 @@ export default function Home() {
                 <div className="grid lg:grid-cols-5 gap-12">
                   {/* Contact Form - Takes up 3 columns */}
                   <div className="lg:col-span-3">
-                    <form onSubmit={async (e) => {
-                      e.preventDefault()
-                      const formData = new FormData(e.currentTarget)
-                      
-                      try {
-                        const response = await fetch('/api/contact', {
-                          method: 'POST',
-                          headers: {
-                            'Content-Type': 'application/json',
-                          },
-                          body: JSON.stringify({
-                            firstName: formData.get('firstName'),
-                            lastName: formData.get('lastName'),
-                            email: formData.get('email'),
-                            company: formData.get('company'),
-                            message: formData.get('message'),
-                          }),
-                        })
-
-                        const result = await response.json()
-
-                        // Check if we have data in the response
-                        if (result.data && Array.isArray(result.data) && result.data.length > 0) {
-                          e.currentTarget.reset()
-                          setShowToast(true)
-                        } else {
-                          throw new Error(result.error || 'Failed to submit form')
-                        }
-                      } catch (error) {
-                        console.error('Error submitting form:', error)
-                        // Don't show error message if data was actually inserted
-                        if (!error.message.includes('Failed to submit form')) {
-                          setShowToast(true)
-                        } else {
-                          alert('Failed to send message. Please try again.')
-                        }
-                      }
-                    }} className="space-y-6 bg-white/50 p-6 rounded-xl shadow-sm">
+                    <form onSubmit={handleSubmit} className="space-y-6 bg-white/50 p-6 rounded-xl shadow-sm">
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
-                          <label htmlFor="firstName" className="block text-sm font-medium text-secondary">
-                            First Name
+                          <label htmlFor="name" className="block text-sm font-medium text-secondary">
+                            Name
                           </label>
                           <Input
-                            id="firstName"
-                            name="firstName"
+                            id="name"
+                            name="name"
                             placeholder="John"
                             className="w-full bg-white border-gray-200 focus:border-primary focus:ring-primary"
                             required
                           />
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="lastName" className="block text-sm font-medium text-secondary">
-                            Last Name
+                          <label htmlFor="email" className="block text-sm font-medium text-secondary">
+                            Email
                           </label>
                           <Input
-                            id="lastName"
-                            name="lastName"
-                            placeholder="Doe"
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="john@example.com"
                             className="w-full bg-white border-gray-200 focus:border-primary focus:ring-primary"
                             required
                           />
                         </div>
                       </div>
                       
-                      <div className="space-y-2">
-                        <label htmlFor="email" className="block text-sm font-medium text-secondary">
-                          Email
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          placeholder="john@example.com"
-                          className="w-full bg-white border-gray-200 focus:border-primary focus:ring-primary"
-                          required
-                        />
-                      </div>
-
-                      <div className="space-y-2">
-                        <label htmlFor="company" className="block text-sm font-medium text-secondary">
-                          Company
-                        </label>
-                        <Input
-                          id="company"
-                          name="company"
-                          placeholder="Your Company"
-                          className="w-full bg-white border-gray-200 focus:border-primary focus:ring-primary"
-                        />
-                      </div>
-
                       <div className="space-y-2">
                         <label htmlFor="message" className="block text-sm font-medium text-secondary">
                           Message

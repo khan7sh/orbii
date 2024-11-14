@@ -43,6 +43,24 @@ export default function AdminPanel() {
     }
   }, [isAuthenticated])
 
+  const handleDelete = async (id: number) => {
+    if (window.confirm('Are you sure you want to delete this submission?')) {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .delete()
+        .eq('id', id)
+
+      if (error) {
+        console.error('Error deleting submission:', error)
+        alert('Failed to delete submission')
+        return
+      }
+
+      // Update the local state to remove the deleted submission
+      setSubmissions(submissions.filter(sub => sub.id !== id))
+    }
+  }
+
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -99,6 +117,7 @@ export default function AdminPanel() {
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Company</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Message</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -114,6 +133,14 @@ export default function AdminPanel() {
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     {new Date(submission.created_at!).toLocaleDateString()}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <button
+                      onClick={() => handleDelete(submission.id)}
+                      className="text-red-600 hover:text-red-800 transition-colors"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
